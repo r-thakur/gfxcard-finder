@@ -67,7 +67,7 @@ def pullPage(sc):
 
     now = datetime.now()
     for x in bbyList["availabilities"]:
-        if (not x["shipping"]["purchasable"]):
+        if (x["shipping"]["purchasable"]):
             print(now.strftime("%d/%m/%Y %H:%M:%S")+": "+"Found following sku in stock:" + x["sku"])
             sendEmail()
             found=True
@@ -77,7 +77,7 @@ def pullPage(sc):
         
         print(now.strftime("%d/%m/%Y %H:%M:%S")+": "+"Nothing in stock.")
 
-    if (numOfEmailsSent < 10):
+    if (numOfEmailsSent < 2):
         s.enter(60, 1, pullPage,(sc,))
 
 
