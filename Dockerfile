@@ -4,6 +4,6 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./src .
+WORKDIR /Users/rohitt/Documents/GitHub/gfxcard-finder/src
 
-CMD ["python", "./main.py"]
+CMD ["python", "-u","main.py"]
