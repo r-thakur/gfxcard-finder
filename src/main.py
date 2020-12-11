@@ -65,7 +65,7 @@ def pullPage(sc):
     r.encoding='utf-8-sig'
     bbyList = json.loads(r.text)
 
-
+    now = datetime.now()
     for x in bbyList["availabilities"]:
         if (not x["shipping"]["purchasable"]):
             print(now.strftime("%d/%m/%Y %H:%M:%S")+": "+"Found following sku in stock:" + x["sku"])
@@ -74,7 +74,7 @@ def pullPage(sc):
             break
 
     if (not found):
-        now = datetime.now()
+        
         print(now.strftime("%d/%m/%Y %H:%M:%S")+": "+"Nothing in stock.")
 
     if (numOfEmailsSent < 10):
