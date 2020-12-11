@@ -8,12 +8,13 @@ from email.mime.text import MIMEText
 import sys
 import sched, time
 from datetime import datetime
+import os
 
 
 smtpConfig = {
     "server":"smtp.sendgrid.net",
     "ports":465,
-    "username":"apikey",
+    "username":os.environ['APIKEY'],
     "password":"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",
     "sender":"rohit@rthakur.com"
 }
