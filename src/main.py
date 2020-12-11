@@ -67,9 +67,10 @@ def pullPage(sc):
 
 
     for x in bbyList["availabilities"]:
-        if (x["shipping"]["purchasable"]):
+        if (not x["shipping"]["purchasable"]):
             sendEmail()
             found=True
+            break
 
     if (not found):
         now = datetime.now()
