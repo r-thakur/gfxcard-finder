@@ -68,6 +68,7 @@ def pullPage(sc):
 
     for x in bbyList["availabilities"]:
         if (not x["shipping"]["purchasable"]):
+            print(now.strftime("%d/%m/%Y %H:%M:%S")+": "+"Found following sku in stock:" + x["sku"])
             sendEmail()
             found=True
             break
