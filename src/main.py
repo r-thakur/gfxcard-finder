@@ -79,7 +79,7 @@ def pullPage(sc):
         print(now.strftime("%d/%m/%Y %H:%M:%S")+": "+"Nothing in stock.")
 
     if (numOfEmailsSent < 2):
-        s.enter(60, 1, pullPage,(sc,))
+        s.enter(15, 1, pullPage,(sc,))
 
 
 
