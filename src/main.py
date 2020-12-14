@@ -15,7 +15,7 @@ smtpConfig = {
     "server":"smtp.sendgrid.net",
     "ports":465,
     "username":"apikey",
-    "password":"os.environ['APIKEY']",
+    "password":os.environ['APIKEY'],
     "sender":"rohit@rthakur.com"
 }
 
